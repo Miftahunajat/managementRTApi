@@ -1,0 +1,40 @@
+# SQLite version 3.x
+#   gem install sqlite3
+#
+#   Ensure the SQLite 3 gem is defined in your Gemfile
+#   gem 'sqlite3'
+#
+default: &default
+  adapter: mysql2
+  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+  timeout: 5000
+  encoding: <%= ENV['DB_ENCODING'] %>
+  username: root
+  password: <%= ENV['DB_PASSWORD'] %>
+
+
+  
+
+
+development:
+  <<: *default
+  database: managemen_rt_development
+  socket: /opt/lampp/var/mysql/mysql.sock
+  host: 127.0.0.1
+
+# Warning: The database defined as "test" will be erased and
+# re-generated from your development database when you run "rake".
+# Do not set this db to the same as development or production.
+test:
+  <<: *default
+  database: managemen_rt_test
+
+production:
+  <<: *default
+  adapter: pg
+  # host: ec2-75-101-133-29.compute-1.amazonaws.com
+  # url: postgres://upzopfnuaqvyzg:f2e1989d6aa982c1c3ba94628952ec3f146fd4754a9db106b6ae8f82f8aad693@ec2-75-101-133-29.compute-1.amazonaws.com:5432/d7k22ajfbcr33u
+  # database: d7k22ajfbcr33u
+  # username: upzopfnuaqvyzg
+  # password: f2e1989d6aa982c1c3ba94628952ec3f146fd4754a9db106b6ae8f82f8aad693
+
