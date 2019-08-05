@@ -1,0 +1,2 @@
+class Bulan < ApplicationRecord
+end

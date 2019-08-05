@@ -13,7 +13,7 @@ default: &default
   password: <%= ENV['DB_PASSWORD'] %>
 
 
-  
+
 
 
 development:
@@ -28,6 +28,7 @@ development:
 test:
   <<: *default
   database: managemen_rt_test
+  socket: /opt/lampp/var/mysql/mysql.sock
 
 production:
   <<: *default
@@ -37,4 +38,3 @@ production:
   # database: d7k22ajfbcr33u
   # username: upzopfnuaqvyzg
   # password: f2e1989d6aa982c1c3ba94628952ec3f146fd4754a9db106b6ae8f82f8aad693
-

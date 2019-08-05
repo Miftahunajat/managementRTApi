@@ -36,3 +36,10 @@ group :production do
 end
 
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
+
+gem 'administrate'
+gem 'carrierwave'
+gem 'administrate-field-carrierwave'
+gem 'cloudinary'
+gem 'carrierwave-base64'
+gem 'administrate-field-select', '~> 2.0', require: 'administrate/field/select_basic'
