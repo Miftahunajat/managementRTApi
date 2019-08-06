@@ -9,6 +9,7 @@ Rails.application.routes.draw do
       resources :roles
       resources :users
       resources :user_bayar_arisans
+      resources :tahuns
 
       root to: "arisans#index"
     end
@@ -22,6 +23,7 @@ Rails.application.routes.draw do
     get '/roles', to: 'user#roles'
     get '/all_iuran', to: 'user#all_iuran'
   end
+  resources :tahun
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
