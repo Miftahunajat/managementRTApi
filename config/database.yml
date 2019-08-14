@@ -14,8 +14,8 @@ default: &default
 
 development:
   <<: *default
-  database: managemen_rt_development
   socket: /opt/lampp/var/mysql/mysql.sock
+  database: managemen_rt_development
   host: 127.0.0.1
 
 # Warning: The database defined as "test" will be erased and
@@ -23,8 +23,8 @@ development:
 # Do not set this db to the same as development or production.
 test:
   <<: *default
-  database: managemen_rt_test
   socket: /opt/lampp/var/mysql/mysql.sock
+  database: managemen_rt_test
 
 production:
   <<: *default

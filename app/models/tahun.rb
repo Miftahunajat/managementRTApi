@@ -1,0 +1,2 @@
+class Tahun < ApplicationRecord
+end

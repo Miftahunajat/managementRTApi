@@ -9,6 +9,8 @@ Rails.application.routes.draw do
       resources :pengungumen
       resources :pengeluarans
       resources :list_pengeluarans
+      resources :tahuns
+
       root to: "arisans#index"
     end
   # Manual Routes
@@ -35,6 +37,7 @@ Rails.application.routes.draw do
     post '/tarik_arisan', to: 'arisan#tarik_arisan'
     get '/detail_user_status', to: 'arisan#detail_user_status'
   end
+  resources :tahun
 
   resources :arisans
   resources :arisans_user do
