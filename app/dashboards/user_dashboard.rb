@@ -8,7 +8,7 @@ class UserDashboard < Administrate::BaseDashboard
   # which determines how the attribute is displayed
   # on pages throughout the dashboard.
   ATTRIBUTE_TYPES = {
-    # kepala_keluarga: Field::BelongsTo.with_options(class_name: "User"),
+    kepala_keluarga: Field::BelongsTo.with_options(class_name: "User"),
     # keluarga: Field::HasMany.with_options(class_name: "User"),
     roles: Field::HasMany,
     # arisans: Field::HasMany,
@@ -33,9 +33,10 @@ class UserDashboard < Administrate::BaseDashboard
   # By default, it's limited to four items to reduce clutter on index pages.
   # Feel free to add, remove, or rearrange items.
   COLLECTION_ATTRIBUTES = [
-    # :kepala_keluarga,
+    :nama,
+    :kepala_keluarga,
     # :keluarga,
-    :roles,
+    # :roles,
     # :arisans,
   ].freeze
 
@@ -44,7 +45,7 @@ class UserDashboard < Administrate::BaseDashboard
   SHOW_PAGE_ATTRIBUTES = [
     # :kepala_keluarga,
     # :keluarga,
-    :roles,
+    # :roles,
     # :arisans,
     :iurans,
     # :bayar_arisans,
@@ -84,7 +85,7 @@ class UserDashboard < Administrate::BaseDashboard
   # Overwrite this method to customize how users are displayed
   # across all pages of the admin dashboard.
   #
-  # def display_resource(user)
-  #   "User ##{user.id}"
-  # end
+  def display_resource(user)
+    "#{user.nama}"
+  end
 end

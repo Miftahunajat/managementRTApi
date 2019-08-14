@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_08_03_184359) do
+ActiveRecord::Schema.define(version: 2019_08_14_101704) do
 
   create_table "arisans", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "nama"
@@ -20,6 +20,7 @@ ActiveRecord::Schema.define(version: 2019_08_03_184359) do
     t.bigint "jenis_kelamin_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.boolean "tutup", default: false
     t.index ["jenis_kelamin_id"], name: "index_arisans_on_jenis_kelamin_id"
   end
 
@@ -41,6 +42,14 @@ ActiveRecord::Schema.define(version: 2019_08_03_184359) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "harga_iurans", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.integer "code"
+    t.string "nama_iuran"
+    t.string "harga"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "iurans", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.bigint "user_id"
     t.bigint "bulan_id"
@@ -55,6 +64,34 @@ ActiveRecord::Schema.define(version: 2019_08_03_184359) do
 
   create_table "jenis_kelamins", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "nama"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "list_pengeluarans", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.bigint "pengeluaran_id"
+    t.string "jumlah"
+    t.string "keterangan"
+    t.date "tanggal"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["pengeluaran_id"], name: "index_list_pengeluarans_on_pengeluaran_id"
+  end
+
+  create_table "pengeluarans", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.bigint "bulan_id"
+    t.string "tahun"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["bulan_id"], name: "index_pengeluarans_on_bulan_id"
+  end
+
+  create_table "pengungumen", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "title"
+    t.text "body"
+    t.string "image_url"
+    t.string "image_description"
+    t.date "tanggal"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

@@ -1,0 +1,2 @@
+module ArisansUserHelper
+end

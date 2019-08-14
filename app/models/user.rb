@@ -11,9 +11,16 @@ class User < ApplicationRecord
   has_many :iurans
   has_many :bayar_arisans, class_name: "UserBayarArisan", foreign_key: ""
   has_many :arisans_user
+  has_many :user_bayar_arisans, through: :arisans_user
   # has_many :user_bayar_arisans
 
   # TODO : Tambah add iuran otomatis
+  before_create :init
+
+    def init
+      self.user_kk_id ||= id
+    end
+
   def self.find_by_nama_password(nama, password)
     User.find_by(nama: nama, password: password)
   end

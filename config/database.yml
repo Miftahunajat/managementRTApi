@@ -12,10 +12,6 @@ default: &default
   username: root
   password: <%= ENV['DB_PASSWORD'] %>
 
-
-
-
-
 development:
   <<: *default
   database: managemen_rt_development

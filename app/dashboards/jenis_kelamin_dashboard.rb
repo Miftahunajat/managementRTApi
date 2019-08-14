@@ -48,7 +48,7 @@ class JenisKelaminDashboard < Administrate::BaseDashboard
   # Overwrite this method to customize how jenis kelamins are displayed
   # across all pages of the admin dashboard.
   #
-  # def display_resource(jenis_kelamin)
-  #   "JenisKelamin ##{jenis_kelamin.id}"
-  # end
+  def display_resource(jenis_kelamin)
+    "#{jenis_kelamin.nama}"
+  end
 end

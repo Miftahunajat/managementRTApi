@@ -45,7 +45,7 @@ class BulanDashboard < Administrate::BaseDashboard
   # Overwrite this method to customize how bulans are displayed
   # across all pages of the admin dashboard.
   #
-  # def display_resource(bulan)
-  #   "Bulan ##{bulan.id}"
-  # end
+  def display_resource(bulan)
+    "#{bulan.nama_bulan}"
+  end
 end

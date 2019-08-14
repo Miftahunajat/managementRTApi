@@ -6,13 +6,9 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-JenisKelamin.create!([{ nama: 'Pria' }, { nama: 'Wanita' }])
-user1 = User.create!(
-    { nama: 'Ali khadafi', jenis_kelamin_id: 1 , password: '234'}
-)
-user2 = User.create!({nama: 'Lady Gaga', jenis_kelamin_id: 2, kepala_keluarga: user1})
-Role.create!([{ name: 'Admin Arisan', code: 1}, { name: 'Admin Iuran', code: 2}, { name: 'Pengurus RT', code: 3 }])
-Bulan.create!([
+JenisKelamin.first_or_create!([{ nama: 'Pria' }, { nama: 'Wanita' }])
+Role.first_or_create!([{ name: 'Admin Arisan', code: 1}, { name: 'Admin Iuran', code: 2}, { name: 'Pengurus RT', code: 3 }])
+Bulan.first_or_create!([
     { nama_bulan: 'Januari' },
     { nama_bulan: 'Februari' },
     { nama_bulan: 'Maret' },
@@ -26,5 +22,13 @@ Bulan.create!([
     { nama_bulan: 'November' },
     { nama_bulan: 'Desember' }
 ])
-arisan = Arisan.create!({ nama: 'Arisan Ibu ibu 1', mulai: DateTime.now, jenis_kelamin_id: 1})
-arisans_user = ArisansUser.create!({user: User.first, arisan: Arisan.first})
+# arisan = Arisan.first_or_create!({ nama: 'Arisan Ibu ibu 1', mulai: DateTime.now, jenis_kelamin_id: 1, iuran: 5000, selesai: DateTime.now + 360})
+# arisans_user = ArisansUser.first_or_create!({user: User.first, arisan: Arisan.first})
+HargaIuran.first_or_create!([
+    {code: 1, nama_iuran: 'Sosial', harga: '15000'},
+    {code: 2, nama_iuran: 'Sampah', harga: '15000'},
+])
+
+# Pengunguman.first_or_create!([
+#     {title: 'Kumpul warga rt 02', body: 'lorem_ipsum_dolor_sit_amet lorem_ipsum_dolor_sit_amet lorem_ipsum_dolor_sit_amet lorem_ipsum_dolor_sit_amet lorem_ipsum_dolor_sit_amet lorem_ipsum_dolor_sit_amet lorem_ipsum_dolor_sit_amet lorem_ipsum_dolor_sit_amet lorem_ipsum_dolor_sit_amet lorem_ipsum_dolor_sit_amet' , tanggal: DateTime.now}
+# ])
