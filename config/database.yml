@@ -29,8 +29,8 @@ test:
 production:
   <<: *default
   adapter: pg
-  # host: ec2-75-101-133-29.compute-1.amazonaws.com
-  # url: postgres://upzopfnuaqvyzg:f2e1989d6aa982c1c3ba94628952ec3f146fd4754a9db106b6ae8f82f8aad693@ec2-75-101-133-29.compute-1.amazonaws.com:5432/d7k22ajfbcr33u
-  # database: d7k22ajfbcr33u
-  # username: upzopfnuaqvyzg
-  # password: f2e1989d6aa982c1c3ba94628952ec3f146fd4754a9db106b6ae8f82f8aad693
+  host: ec2-54-225-113-7.compute-1.amazonaws.com
+  url: postgres://htxenjdzsnrtvn:9a8684a0982eb78782ce0c4cf7a5552531f6009189f0bc82b5eaba28f916f075@ec2-54-225-113-7.compute-1.amazonaws.com:5432/d2t47ts8d5jfme
+  database: d2t47ts8d5jfme
+  username: htxenjdzsnrtvn
+  password: 9a8684a0982eb78782ce0c4cf7a5552531f6009189f0bc82b5eaba28f916f075
