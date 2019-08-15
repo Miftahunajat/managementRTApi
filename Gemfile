@@ -36,7 +36,7 @@ group :production do
 end
 
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
-
+#asdasd
 gem 'administrate'
 gem 'carrierwave'
 gem 'administrate-field-carrierwave'
