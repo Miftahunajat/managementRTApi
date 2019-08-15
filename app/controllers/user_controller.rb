@@ -21,7 +21,7 @@ class UserController < ActionController::API
   def all_kk_user_with_iuran
     @user = User.where('users.id = users.user_kk_id')
                 .joins("LEFT JOIN iurans ON users.id = iurans.user_id")
-                .select('*,users.id, iurans.sosial as sosial')
+                .select('*,users.user_kk_id as id, iurans.sosial as sosial')
     render json: {items: @user}
   end
 
