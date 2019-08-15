@@ -49,6 +49,7 @@ Rails.application.routes.draw do
   resources :list_pengeluaran
 
   get '/pengeluaran_per_tahun', to: 'pengeluaran#pengeluaran_per_tahun'
+  get '/total_pengeluaran', to: 'pengeluaran#total_pengeluaran'
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

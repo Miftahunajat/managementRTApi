@@ -39,4 +39,8 @@ class PengeluaranController < ActionController::API
     end
     render json: { items: pengeluarans }, include: [:list_pengeluarans, bulan: { only: :nama_bulan }], methods: :total
   end
+
+  def total_pengeluaran
+    render json: { total: ListPengeluaran.sum(:jumlah) }
+  end
 end
