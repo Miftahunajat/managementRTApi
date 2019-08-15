@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_08_14_101704) do
+ActiveRecord::Schema.define(version: 2019_08_15_014334) do
 
   create_table "arisans", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "nama"
@@ -70,7 +70,7 @@ ActiveRecord::Schema.define(version: 2019_08_14_101704) do
 
   create_table "list_pengeluarans", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.bigint "pengeluaran_id"
-    t.string "jumlah"
+    t.integer "jumlah"
     t.string "keterangan"
     t.date "tanggal"
     t.datetime "created_at", null: false
