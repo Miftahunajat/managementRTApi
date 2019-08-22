@@ -117,5 +117,4 @@ class UserController < ActionController::API
     arisans.each { |x| x.user_id = params[:user_id]}
     render json: {items: arisans}, methods: :user_ikut
   end
-
 end

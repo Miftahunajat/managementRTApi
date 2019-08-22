@@ -16,6 +16,7 @@ class ArisanDashboard < Administrate::BaseDashboard
     selesai: Field::DateTime,
     iuran: Field::String,
     jenis_kelamin: Field::BelongsTo.with_options(class_name: "JenisKelamin"),
+    tutup: Field::Boolean,
     created_at: Field::DateTime,
     updated_at: Field::DateTime,
   }.freeze
@@ -43,6 +44,7 @@ class ArisanDashboard < Administrate::BaseDashboard
     :selesai,
     :iuran,
     :jenis_kelamin,
+    :tutup,
     :created_at,
     :updated_at,
   ].freeze
@@ -58,6 +60,7 @@ class ArisanDashboard < Administrate::BaseDashboard
     :selesai,
     :iuran,
     :jenis_kelamin,
+    :tutup
   ].freeze
 
   # Overwrite this method to customize how arisans are displayed

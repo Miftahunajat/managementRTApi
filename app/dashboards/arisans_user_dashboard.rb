@@ -15,6 +15,7 @@ class ArisansUserDashboard < Administrate::BaseDashboard
     daftar: Field::Boolean,
     ikut: Field::Boolean,
     tarik: Field::Boolean,
+    nama_peserta: Field::String,
     created_at: Field::DateTime,
     updated_at: Field::DateTime,
   }.freeze
@@ -29,6 +30,7 @@ class ArisansUserDashboard < Administrate::BaseDashboard
     :user,
     :arisan,
     :daftar,
+    :nama_peserta,
     :ikut,
     :tarik,
   ].freeze
@@ -43,6 +45,7 @@ class ArisansUserDashboard < Administrate::BaseDashboard
     :daftar,
     :ikut,
     :tarik,
+    :nama_peserta,
     :created_at,
     :updated_at,
   ].freeze
@@ -54,6 +57,7 @@ class ArisansUserDashboard < Administrate::BaseDashboard
     :user,
     :arisan,
     :user_bayar_arisans,
+    :nama_peserta,
     :daftar,
     :ikut,
     :tarik,

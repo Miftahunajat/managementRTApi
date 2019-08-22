@@ -33,15 +33,15 @@ Rails.application.routes.draw do
   resources :arisan do
     get '/all_user', to: 'arisan#all_user_status'
     post '/daftar_arisan', to: 'arisan#daftar_arisan'
-    post '/ikut_arisan', to: 'arisan#ikut_arisan'
-    post '/tarik_arisan', to: 'arisan#tarik_arisan'
-    get '/detail_user_status', to: 'arisan#detail_user_status'
   end
   resources :tahun
 
   resources :arisans
   resources :arisans_user do
     post '/update_arisan', to: 'arisans_user#update_arisan'
+    post '/ikut_arisan', to: 'arisans_user#ikut_arisan'
+    get '/detail_user_status', to: 'arisans_user#detail_user_status'
+    post '/tarik_arisan', to: 'arisans_user#tarik_arisan'
   end
 
   resources :harga_iuran
