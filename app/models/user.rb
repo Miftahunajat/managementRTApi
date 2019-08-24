@@ -20,8 +20,8 @@ class User < ApplicationRecord
   before_create :init
 
     def init
-      self.password ||= nama
-      self.user_kk_id ||= alamat
+      self.password ||= alamat
+      self.user_kk_id ||= id
     end
 
   def self.find_by_nama_password(nama, password)
