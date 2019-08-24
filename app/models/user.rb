@@ -2,6 +2,8 @@ class User < ApplicationRecord
 
   after_create :set_user_kk_id_attribute
 
+  validates_uniqueness_of :nama, scope: :alamat
+  # Ex:- scope :active, -> {where(:active => true)}
   belongs_to :kepala_keluarga, class_name: "User", foreign_key: "user_kk_id", optional: true
   belongs_to :jenis_kelamin
   mount_base64_uploader :image_url, ImagesUploader
@@ -18,7 +20,8 @@ class User < ApplicationRecord
   before_create :init
 
     def init
-      self.user_kk_id ||= id
+      self.password ||= nama
+      self.user_kk_id ||= alamat
     end
 
   def self.find_by_nama_password(nama, password)

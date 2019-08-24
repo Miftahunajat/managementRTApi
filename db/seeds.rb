@@ -1,3 +1,5 @@
+require 'csv'
+
 # This file should contain all the record creation needed to seed the database with its default values.
 # The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
 #
@@ -32,3 +34,11 @@ HargaIuran.first_or_create!([
 # Pengunguman.first_or_create!([
 #     {title: 'Kumpul warga rt 02', body: 'lorem_ipsum_dolor_sit_amet lorem_ipsum_dolor_sit_amet lorem_ipsum_dolor_sit_amet lorem_ipsum_dolor_sit_amet lorem_ipsum_dolor_sit_amet lorem_ipsum_dolor_sit_amet lorem_ipsum_dolor_sit_amet lorem_ipsum_dolor_sit_amet lorem_ipsum_dolor_sit_amet lorem_ipsum_dolor_sit_amet' , tanggal: DateTime.now}
 # ])
+
+#seeds warga
+csv_text = File.read(Rails.root.join('lib', 'seeds', 'kampungku_sorted.csv'))
+csv = CSV.parse(csv_text, headers: true, encoding: 'ISO-8859-1')
+csv.each do |row|
+    puts row.to_hash
+    User.create!(row.to_hash)
+end
